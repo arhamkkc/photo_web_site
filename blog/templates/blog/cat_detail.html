@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<div class="container">
+    <h1 class="text-center">{{cat.category_name}}</h1>
+    {% for photos in photo %}
+    <div style="text-align: center;">
+        <img src="media/{{photos.image}}" class="img-fluid my-2"  alt="Responsive image">
+        <br>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+    

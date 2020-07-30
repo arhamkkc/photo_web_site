@@ -1,0 +1,19 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<div class="container my-2">
+    <h1 class = 'text-center'>Categories</h1>
+  <div class="row">
+    {% for cats in cat %} 
+    <a href="{% url 'cat_detail' id=cats.id %}">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 my-3">   
+      <div class="card" style="width: fit-content;">
+        <img src="media/{{cats.category_image}}" class="card-img-top" alt="..." style="height: 255px;">
+      </div>
+      <a href="{% url 'cat_detail' id=cats.id %}"><h4 style="text-align: center;">{{cats.category_name}}</h4>
+    </div>
+    </a>
+    {% endfor %}
+  </div>
+  </div>
+
+{% endblock %}
